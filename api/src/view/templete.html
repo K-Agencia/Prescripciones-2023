@@ -1,0 +1,423 @@
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+   <link href="//db.onlinewebfonts.com/c/cb051b6f43b7fae342080025a7ca8b75?family=Colgate+Ready" rel="stylesheet"
+      type="text/css" />
+   <style>
+      @font-face {
+         font-family: "Colgate Ready";
+         src: url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.eot");
+         src: url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.woff") format("woff"), url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/cb051b6f43b7fae342080025a7ca8b75.svg#Colgate Ready") format("svg");
+      }
+
+      html,
+      body {
+         margin: 0px;
+         padding: 0px;
+         font-family: "Colgate Ready";
+      }
+
+      .page {
+         width: 100%;
+         height: 100%;
+         position: relative;
+         display: block;
+         page-break-after: auto;
+         /* margin: 50px; */
+         overflow: hidden;
+      }
+
+      .page.prescipcion {
+         width: 90%;
+         margin: 0px auto;
+         color: #595655;
+         background: white;
+      }
+
+      .page.colgate-pass {
+         margin: 0px;
+         padding: 0px;
+         background: black;
+      }
+
+      @media print {
+         .page {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+         }
+      }
+
+      .titulo {
+         font-size: 20px;
+         font-weight: 700;
+         text-align: center;
+         text-transform: uppercase;
+         color: #d2010d;
+      }
+
+      /* .logoColgate {
+         width: 70px;
+         position: absolute;
+         top: 0;
+         left: 30px;
+      } */
+
+      .seccionQR {
+         width: min-content;
+         padding: 8px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         border-radius: 8px;
+         background: #d2010d;
+         position: absolute;
+         top: 65px;
+         right: 60px;
+      }
+
+      .seccionQR h3 {
+         margin-top: 0px;
+         margin-bottom: 3px;
+         font-size: 10px;
+         text-align: center;
+         color: #fff;
+         font-weight: 500;
+      }
+
+      .seccionQR img {
+         width: 70px;
+         padding: 8px;
+         border-radius: 8px;
+         background: #fff;
+      }
+
+      .informacionDatos {
+         margin: 8px 0 16px 8px;
+      }
+
+      .item-info {
+         display: flex;
+         align-items: center;
+         margin-bottom: 8px;
+      }
+
+      .item-info p {
+         margin: 0;
+         padding: 4px 8px;
+         border-radius: 8px;
+         font-size: 10px;
+         text-transform: uppercase;
+      }
+
+      .item-info .item-titulo {
+         width: 70px;
+         font-weight: 500;
+      }
+
+      .item-info p.item-titulo.paciente,
+      .item-info p.infoVariable.paciente {
+         background: #D9F0F2;
+      }
+
+      .item-info p.item-titulo.doctor,
+      .item-info p.infoVariable.doctor {
+         background: #eeeeee;
+      }
+
+      .item-info p.infoVariable {
+         margin-left: 4px;
+         width: 200px;
+      }
+
+      .seccion {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .listaProductos {
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      .listaProductos td {
+         width: 850px;
+      }
+
+      .titulo-listaProductos {
+         margin: 0px;
+         font-size: 15px;
+         font-weight: 700;
+         color: #d2010d;
+         text-transform: uppercase;
+         text-align: center;
+      }
+
+      .productos {
+         /* width: 850px; */
+         height: min-content;
+         padding: 8px;
+         display: flex;
+         align-items: center;
+         border: 2px solid #eeeeee;
+         border-radius: 8px;
+      }
+
+      .productos tr td:nth-child(1) {
+         width: 30%;
+      }
+
+      .productos tr td:nth-child(2) {
+         width: 70%;
+      }
+
+      .productos .imagen-productos {
+         width: 100%;
+      }
+
+      .productos .imagen-productos img.imagenProducto {
+         width: 100%;
+      }
+
+      .productos .informacion-productos {
+         width: 100%;
+      }
+
+      .productos .informacion-productos .titulo-informacion {
+         margin: 0px 0px 8px;
+         font-size: 10px;
+         font-weight: 500;
+         color: #d2010d;
+         text-transform: uppercase;
+         text-align: left;
+      }
+
+      .productos .informacion-productos .descripcion-informacion {
+         margin: 0px;
+         font-size: 10px;
+         text-align: justify;
+      }
+
+      .recomendaciones {
+         margin: 0;
+         padding: 8px 16px;
+         border: 2px solid #eeeeee;
+         border-radius: 8px;
+      }
+
+      h3.titulo-recomendaciones {
+         margin: 0;
+         font-size: 15px;
+         font-weight: 700;
+         color: #009CA6;
+         text-transform: uppercase;
+         text-align: center;
+      }
+
+      .recomendaciones p.texto-recomendaciones {
+         margin: 0;
+         font-size: 10px;
+         text-align: justify;
+      }
+
+      .footer {
+         width: 100%;
+         position: absolute;
+         bottom: 10px;
+      }
+
+      .seccionDoctor {
+         width: 50%;
+      }
+
+      .seccionDoctor .seccion-imagenes {
+         display: flex;
+      }
+
+      .seccionDoctor .firma-doctor,
+      .seccionDoctor .sello-doctor {
+         height: 80px;
+      }
+
+      .seccionDoctor .firma-doctor img,
+      .seccionDoctor .sello-doctor img {
+         width: 100%;
+      }
+
+      .seccionDoctor .separador-doctor {
+         width: 100%;
+      }
+
+      .seccionDoctor .nombre-doctor {
+         margin: 0px;
+         font-size: 12px;
+         font-weight: 700;
+         text-transform: capitalize;
+      }
+
+      .seccionDoctor .cedula-doctor {
+         margin: 0px;
+         font-size: 10px;
+         font-weight: 100;
+      }
+
+      .sugerencia {
+         width: 100%;
+      }
+
+      .sugerencia p {
+         width: 100%;
+         margin: 0px;
+         font-size: 10px;
+         text-align: center;
+         color: #7e7e7e;
+      }
+
+      .colgate-pass img.tarjeta {
+         width: 100%;
+         height: 100%;
+      }
+
+      .colgate-pass .data {
+         width: 100%;
+         text-align: center;
+         font-weight: 600;
+         position: absolute;
+         top: 26.5em;
+      }
+
+      .colgate-pass .data h1{
+         font-size: 3rem;
+      }
+
+      .colgate-pass .data p{
+         font-size: 1.8rem;
+      }
+
+      .colgate-pass .data h1,
+      .colgate-pass .data p {
+         margin: 0;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="page prescipcion">
+      <h1 class="titulo">Prescripción Odontológica</h1>
+      <!-- <img src="{{LOGO_COLGATE}}" class="logoColgate" /> -->
+      <hr>
+      <div>
+         <div class="seccionQR">
+            <h3>CÓDIGO QR</h3>
+            <img src="{{QR_INFORMATION}}" />
+         </div>
+         <div class="">
+            <!-- informacionDatos -->
+            <table>
+               <tbody>
+                  <tr class="item-info">
+                     <td>
+                        <p class="item-titulo doctor">Fecha:</p>
+                     </td>
+                     <td>
+                        <p class="infoVariable doctor">{{FECHA_ACTUAL}}</p>
+                     </td>
+                  </tr>
+                  <tr class="item-info">
+                     <td>
+                        <p class="item-titulo paciente">PACIENTE:</p>
+                     </td>
+                     <td>
+                        <p class="infoVariable paciente">{{NOMBRE_PACIENTE}} {{APELLIDO_PACIENTE}}</p>
+                     </td>
+                  </tr>
+                  <tr class="item-info">
+                     <td>
+                        <p class="item-titulo paciente">CÉDULA:</p>
+                     </td>
+                     <td>
+                        <p class="infoVariable paciente">{{CEDULA_PACIENTE}}</p>
+                     </td>
+                  </tr>
+                  <tr class="item-info">
+                     <td>
+                        <p class="item-titulo doctor">Doctor(A):</p>
+                     </td>
+                     <td>
+                        <p class="infoVariable doctor">{{NOMBRE_DOCTOR_1}}</p>
+                     </td>
+                  </tr>
+                  <tr class="item-info">
+                     <td>
+                        <p class="item-titulo doctor">TELÉFONO:</p>
+                     </td>
+                     <td>
+                        <p class="infoVariable doctor">{{TELEFONO_DOCTOR}}</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+
+         </div>
+      </div>
+
+      <hr>
+
+      <div class='seccion'>
+         <h3 class="titulo-listaProductos">PRODUCTOS</h3>
+         <div class='listaProductos'>
+            <table>
+               <tbody>
+                  {{LISTA_PRODUCTOS}}
+               </tbody>
+            </table>
+         </div>
+      </div>
+
+      <hr>
+      <h3 class='titulo-recomendaciones'>RECOMENDACIONES ADICIONALES</h3>
+      <div class="recomendaciones">
+         <p class='texto-recomendaciones'>{{RECOMENDACIONES}}</p>
+      </div>
+
+      <div class='footer'>
+         <div class='seccionDoctor'>
+            <div class='seccion-imagenes'>
+               <table>
+                  <tr>
+                     <td>
+                        <img class='firma-doctor' src="{{FIRMA_DOCTOR}}" />
+                     </td>
+                     <td>
+                        <img class='sello-doctor' src="{{SELLO_DOCTOR}}" />
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <hr class="separador-doctor">
+            <p class="nombre-doctor">Dr(a).: {{NOMBRE_DOCTOR_2}}</p>
+         </div>
+         <br />
+         <div class='sugerencia'>
+            <p>Encuentre los productos en</p>
+            <p>Drogas la Rebaja, Farmatodo, Droguerías Alemana, Cruz Verde, Farmacias Pasteur, Locatel</p>
+         </div>
+      </div>
+   </div>
+
+   <div class="page colgate-pass">
+      <div class="data">
+         <h1>COL0000000</h1>
+         <p>~ {{NOMBRE_DOCTOR_3}} ~</p>
+      </div>
+      <img src="{{TARJETA_COLGATE_PASS}}" alt="tarjeta" class="tarjeta">
+   </div>
+</body>
+
+</html>
